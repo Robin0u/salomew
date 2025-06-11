@@ -24,7 +24,7 @@ function verifierPrenom() {
   if (normalise === 'salome') {
     afficherQuestion();
   } else {
-    alert("C'est pas le bon prénom 🙃");
+    alert("Ptdr t'es qui ? C'est réservé à la meilleure copine du monde (donc pas toi dégage)");
   }
 }
 

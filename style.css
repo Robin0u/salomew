@@ -1,31 +1,38 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #121212;
+  background-color: #090340; /* nuit plus bleutée */
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
+
 #app {
   width: 90%;
   max-width: 400px;
 }
+
 .card {
   background: #fff;
   color: #000;
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 0 15px #fff3;
+  box-shadow:
+    0 0 10px #ffffffaa,
+    0 0 20px #ffffff44;
   text-align: center;
+  transition: box-shadow 0.3s ease-in-out;
 }
+
 input[type="text"] {
   padding: 10px;
   width: 80%;
   margin-bottom: 10px;
   font-size: 16px;
 }
+
 button {
   padding: 10px 20px;
   border: none;
@@ -36,18 +43,23 @@ button {
   margin-top: 10px;
   cursor: pointer;
 }
+
 .stars {
   font-size: 24px;
   margin: 10px 0;
 }
+
 .stars span {
   cursor: pointer;
   color: #ccc;
   user-select: none;
+  transition: color 0.2s;
 }
+
 .stars span.selected {
   color: gold;
 }
+
 .popup {
   position: fixed;
   top: 0; left: 0;
@@ -58,6 +70,7 @@ button {
   align-items: center;
   z-index: 1000;
 }
+
 .popup .card {
   width: 90%;
 }
