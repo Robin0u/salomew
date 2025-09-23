@@ -3,24 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>For Salomew</title>
+  <title>For Salomew 💖</title>
+  <meta name="description" content="Petit questionnaire interactif et amoureux pour Salomé 💕" />
   <link rel="stylesheet" href="style.css" />
+  <!-- Optionnel : favicon -->
+  <!-- <link rel="icon" href="favicon.ico" type="image/x-icon" /> -->
 </head>
 <body>
-  <div id="app">
-    <div class="card" id="question-card">
-      <h2>Ton prénom ?</h2>
-      <input type="text" id="prenom" placeholder="Entre ton prénom :)" />
-      <button id="btn-valider">Valider</button>
-    </div>
-  </div>
+  <main id="app" role="main">
+    <section class="card" id="question-card">
+      <header>
+        <h2>Ton prénom ?</h2>
+      </header>
+      <form id="form-prenom">
+        <label for="prenom" class="visually-hidden">Entre ton prénom</label>
+        <input 
+          type="text" 
+          id="prenom" 
+          name="prenom" 
+          placeholder="Entre ton prénom :)" 
+          required 
+          aria-label="Champ prénom"
+        />
+        <button type="button" id="btn-valider">Valider</button>
+      </form>
+    </section>
+  </main>
 
-  <div id="popup" class="popup" style="display:none">
+  <!-- Popup message -->
+  <div id="popup" class="popup" style="display:none" role="dialog" aria-modal="true">
     <div class="card">
-      <p>Moi aussi je t’aime bebeta 💕 <br>
-      N'oublie pas de répondre à mon pavé chat ❤️ <br>
-      et de regarder mes tiktok aussi 😔</p>
-      <button id="btn-popup-suivant">Question suivante</button>
+      <p>
+        Moi aussi je t’aime bebeta 💕 <br>
+        N'oublie pas de répondre à mon pavé chat ❤️ <br>
+        et de regarder mes TikTok aussi 😔
+      </p>
+      <button id="btn-popup-suivant">Finir le questionnaire</button>
     </div>
   </div>
 
