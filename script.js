@@ -1,4 +1,4 @@
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwEiGvE1AFhph9Rh0OU4MlFUDDwm2Y4kZTtoUA3ARi_TVpkrSw8qp5sgbyxL5ELTcdB1Q/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzPlVocm18f1XSv9Y_fPDZPUjItgOnyWTR3ZXCqF4anvAR_s3ODFyG0BGFN8vpeXxXs/exec";
 
 let prenomUtilisateur = "";
 const reponses = [];
@@ -162,7 +162,11 @@ function envoyerReponses() {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload)
   })
-  .then(res => console.log("Réponses envoyées avec succès !"))
+  .then(res => {
+    console.log("Réponses envoyées, statut :", res.status);
+    return res.text(); // juste pour logger, pas besoin de JSON
+  })
+  .then(text => console.log("Réponse serveur brute :", text))
   .catch(e => console.error("Erreur d’envoi :", e));
 }
 
@@ -175,14 +179,3 @@ function afficherMessageFinal() {
     </div>
   `;
 }
-
-console.log("Envoi des données :", payload);
-
-fetch(SCRIPT_URL, {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(payload)
-})
-.then(res => res.text())
-.then(txt => console.log("Réponse du serveur :", txt))
-.catch(e => console.error("Erreur d’envoi :", e));
